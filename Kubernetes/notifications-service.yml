@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: proj-notification
+  labels:
+    app: proj-notification
+spec:
+  selector:
+    app: proj-notification
+  ports:
+  - protocol: TCP
+    # Port accessible inside cluster
+    port: 8080
+    # Port to forward to inside the pod
+    targetPort: 80

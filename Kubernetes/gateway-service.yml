@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: projapp
+  labels:
+    app: projapp
+spec:
+  selector:
+    app: projapp
+  ports:
+  - protocol: TCP
+    # Port accessible inside cluster
+    port: 8080
+    # Port to forward to inside the pod
+    targetPort: 80
+    # Port accessible outside cluster
+    nodePort: 30001
+  type: LoadBalancer

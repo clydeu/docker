@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proj-bank
+  labels:
+    app: proj-bank
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: proj-bank
+  template:
+    metadata:
+      labels:
+        app: proj-bank
+    spec:
+      containers:
+      - name: proj-bank
+        image: 545018635250.dkr.ecr.us-east-1.amazonaws.com/proj-bank:test1
+        ports:
+        - containerPort: 80
+        env:
+        - name: "ASPNETCORE_ENVIRONMENT"
+          value: "Test"
+        imagePullPolicy: Always
+      imagePullSecrets:
+        - name: regcred

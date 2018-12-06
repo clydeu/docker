@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: wicket-account
+  labels:
+    app: wicket-account
+spec:
+  selector:
+    app: wicket-account
+  ports:
+  - protocol: TCP
+    # Port accessible inside cluster
+    port: 8080
+    # Port to forward to inside the pod
+    targetPort: 80

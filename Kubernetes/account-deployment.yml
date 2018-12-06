@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wicket-account
+  labels:
+    app: wicket-account
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wicket-account
+  template:
+    metadata:
+      labels:
+        app: wicket-account
+    spec:
+      containers:
+      - name: wicket-account
+        image: 545018635250.dkr.ecr.us-east-1.amazonaws.com/wicket-account:test2
+        ports:
+        - containerPort: 80
+        env:
+        - name: "ASPNETCORE_ENVIRONMENT"
+          value: "Test"
+        imagePullPolicy: Always
+      imagePullSecrets:
+        - name: regcred

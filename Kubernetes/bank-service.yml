@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: proj-bank
+  labels:
+    app: proj-bank
+spec:
+  selector:
+    app: proj-bank
+  ports:
+  - protocol: TCP
+    # Port accessible inside cluster
+    port: 8080
+    # Port to forward to inside the pod
+    targetPort: 80
