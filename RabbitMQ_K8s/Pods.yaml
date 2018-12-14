@@ -2,7 +2,7 @@ apiVersion: apps/v1beta1
 kind: StatefulSet
 metadata:
   name: rabbitmq
-  namespace: test-rabbitmq
+  namespace: rabbitmq-cluster
 spec:
   serviceName: rabbitmq
   replicas: 5
