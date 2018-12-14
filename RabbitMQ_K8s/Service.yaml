@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  namespace: test-rabbitmq
+  namespace: rabbitmq-cluster
   name: rabbitmq
   labels:
     app: rabbitmq
