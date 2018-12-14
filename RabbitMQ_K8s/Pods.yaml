@@ -19,6 +19,8 @@ spec:
         lifecycle:
           postStart:
             exec:
+              # Set policy for queue mirroring https://www.rabbitmq.com/ha.html
+              # 60s should give the container enough time to start RabbitMQ
               command:
               - /bin/sh
               - -c
