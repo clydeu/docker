@@ -9,7 +9,7 @@ kind: Role
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
   name: endpoint-reader
-  namespace: test-rabbitmq 
+  namespace: rabbitmq-cluster 
 rules:
 - apiGroups: [""]
   resources: ["endpoints"]
@@ -19,7 +19,7 @@ kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
   name: endpoint-reader
-  namespace: test-rabbitmq
+  namespace: rabbitmq-cluster
 subjects:
 - kind: ServiceAccount
   name: rabbitmq
