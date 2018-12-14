@@ -2,7 +2,7 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: rabbitmq-config
-  namespace: test-rabbitmq
+  namespace: rabbitmq-cluster
 data:
   enabled_plugins: |
       [rabbitmq_management,rabbitmq_peer_discovery_k8s].
